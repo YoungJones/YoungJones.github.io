@@ -1,74 +1,201 @@
-﻿<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html>
 
 	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<title>弹出框美化 By袁小溅</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-		<link href="css/style.css" rel="stylesheet" />
+		<meta charset="utf-8" />
+		<title>Jones's Home</title>
+		<link rel="stylesheet" href="css/style.css" />
+		<link rel="stylesheet" href="css/style1.css" />
+		<link rel="stylesheet" href="dist/MODALit.min.css" />
+		<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+		<script type="text/javascript" src="dist/MODALit.min.js" ></script>
+		<script type="text/javascript" src="js/shakeYou.js" ></script>
+		<script type="text/javascript" src="js/script.js" ></script>
+		<script type="text/javascript" src="js/ui.js"></script>
 		<style>
-			.alert {
-				width: 90%;
-				text-align: center;
-				color: #fff;
-				margin: 10px auto;
-				border-radius: 5px;
-				line-height: 30px;
-				cursor: pointer;
-				background: #4ab819;
+			#body {
+				width: 80%;
+				margin-left: 10%;
 			}
 			
-			.confirm {
-				background: #196fb8;
+			.hr {
+				border: .4px solid #008080;
+				width: 86%;
 			}
 			
-			.open {
-				background: #f88408;
+			.hr:before {
+				margin-top: 10px;
 			}
 			
-			.toast {
-				background: #f80851;
+			.hr:after {
+				margin-bottom: 10px;
 			}
-			
-			.later {
-				background: #a9a9a9;
+			.photo-list{
+				width: 20%;
+				padding: 2%;
+			}
+			.information-p{
+				margin-left: 20%;
+				margin-top: 0;
+				text-decoration: underline;
+			}
+			.information-label{
+				color: #333333;
+				font-weight: 400;
 			}
 		</style>
 	</head>
 
 	<body>
-		<div class="alert" onclick="mizhu.alert('alert_带标题', '这是alert效果');">alert_带标题</div>
-		<div class="alert" onclick="mizhu.alert('', '这是alert效果','alert_red');">alert_带图标</div>
-		<div class="alert" onclick="mizhu.alert('alert_带标题带图标', '这是alert效果','alert_green');">alert_带标题带图标</div>
-		<div class="alert" onclick="mizhu.alert('', '这是alert效果');">alert_无标题无图标</div>
-		<!--=============================================================================================================-->
-		<div class="alert confirm" onclick="_confirm1()">confirm_无标题</div>
-		<div class="alert confirm" onclick="_confirm2()">confirm_带标题</div>
-		<!--=============================================================================================================-->
-		<div class="alert open" onclick="mizhu.open(600, 400, '新浪微博', 'http://weibo.com/yuanyuanforlove');">open</div>
-		<!--=============================================================================================================-->
-		<div class="alert toast" onclick="mizhu.toast('已取消关注');">toast_默认3秒消失</div>
-		<div class="alert toast" onclick="mizhu.toast('已取消关注', 6000);">toast_自定义时间(6秒)</div>
-		<!--=============================================================================================================-->
-		<div class="alert later">不定时更新</div>
+		<div>
+			<img class="bg_img" src="img/bg.JPG" />
+			<!-- head begin -->
+			<div id="head" style="border: 1px none teal;">
+				<span class="head-span" id="tit1">
+					<label class="title-word index">
+						首页
+						<p class="head-span-p">INDEX</p>
+					</label>
+				</span>
+				<span class="head-span">
+					<label class="title-word information">
+						个人信息
+						<p class="head-span-p">INFORMATION</p>
+					</label>
+				</span>
+				<span class="head-span">
+					<label class="title-word photo">
+						照片
+						<p class="head-span-p">PHOTO</p>
+					</label>
+				</span>
+				<span class="head-span">
+					<label class="title-word achievement">
+						简历
+						<p class="head-span-p">RESUME</p>
+					</label>
+				</span>
+				<span class="head-span">
+					<label class="title-word essay">
+						随笔
+						<p class="head-span-p">ESSAY</p>
+					</label>
+				</span>
+			</div>
+			<script>
+				var a = $("#head").width();
+				var b = a / 5 - 10;
+				$("#head span").css({
+					"width": b + "px"
+				});
+			</script>
+			<!-- head end -->
+			<hr class="hr" />
+			<!-- body begin -->
+			<div id="body" style="border: 1px none darkcyan;">
+				<!-- index -->
+				<div id="index" style="display: none;">
+					content-index
+				</div>
+
+				<!-- information -->
+				<div id="information" style="display: none;">
+					<table style="width: 70%;margin-left: 10%;margin-top: 4%;">
+						<tr>
+							<td><label class="information-label">NAME:</label><p class="information-p">Jones Young</p></td>
+							<td><label class="information-label">AGE:</label><p class="information-p">23</p></td>
+						</tr>
+						<tr>
+							<td><label class="information-label">SEX:</label><p class="information-p">Male</p></td>
+							<td><label class="information-label">NATIVE PLACE:</label><p class="information-p">China/Sichuan</p></td>
+						</tr>
+						<tr>
+							<td><label class="information-label">NATION:</label><p class="information-p">Han</p></td>
+							<td><label class="information-label">EDUCATIONAL BACKGROUND AND MAJOR:</label><p class="information-p">Sichuan University of Art and Science/Computer Science and Technology</p></td>
+						</tr>
+						<tr>
+							<td><label class="information-label">WEIGHT:</label><p class="information-p">65KG</p></td>
+							<td><label class="information-label">HEIGHT:</label><p class="information-p">165CM</p></td>
+						</tr>
+						<tr>
+							<td><label class="information-label">EMAIL:</label><p class="information-p">a973624194@qq.com</p></td>
+							<td><label class="information-label">PHONE:</label><p class="information-p">+86-15984759504</p></td>
+						</tr>
+					</table>
+				</div>
+
+				<!-- photo -->
+				<div id="photo" style="display: none;">
+					<img src="img/1.png" data-src="img/1.png" class="demo-gallery photo-list" data-caption="<svg xmlns='http://www.w3.org/2000/svg' style='height:12px;width:auto;fill:white;' viewBox='0 0 32 32'><path d='M20.8 18.1c0 2.7-2.2 4.8-4.8 4.8s-4.8-2.1-4.8-4.8c0-2.7 2.2-4.8 4.8-4.8 2.7.1 4.8 2.2 4.8 4.8zm11.2-7.4v14.9c0 2.3-1.9 4.3-4.3 4.3h-23.4c-2.4 0-4.3-1.9-4.3-4.3v-15c0-2.3 1.9-4.3 4.3-4.3h3.7l.8-2.3c.4-1.1 1.7-2 2.9-2h8.6c1.2 0 2.5.9 2.9 2l.8 2.4h3.7c2.4 0 4.3 1.9 4.3 4.3zm-8.6 7.5c0-4.1-3.3-7.5-7.5-7.5-4.1 0-7.5 3.4-7.5 7.5s3.3 7.5 7.5 7.5c4.2-.1 7.5-3.4 7.5-7.5z'></path></svg>" />
+					<img src="img/2.JPG" data-src="img/2.JPG" class="demo-gallery photo-list" data-caption="<svg xmlns='http://www.w3.org/2000/svg' style='height:12px;width:auto;fill:white;' viewBox='0 0 32 32'><path d='M20.8 18.1c0 2.7-2.2 4.8-4.8 4.8s-4.8-2.1-4.8-4.8c0-2.7 2.2-4.8 4.8-4.8 2.7.1 4.8 2.2 4.8 4.8zm11.2-7.4v14.9c0 2.3-1.9 4.3-4.3 4.3h-23.4c-2.4 0-4.3-1.9-4.3-4.3v-15c0-2.3 1.9-4.3 4.3-4.3h3.7l.8-2.3c.4-1.1 1.7-2 2.9-2h8.6c1.2 0 2.5.9 2.9 2l.8 2.4h3.7c2.4 0 4.3 1.9 4.3 4.3zm-8.6 7.5c0-4.1-3.3-7.5-7.5-7.5-4.1 0-7.5 3.4-7.5 7.5s3.3 7.5 7.5 7.5c4.2-.1 7.5-3.4 7.5-7.5z'></path></svg>" />
+					<img src="img/3.JPG" data-src="img/3.JPG" class="demo-gallery photo-list" data-caption="<svg xmlns='http://www.w3.org/2000/svg' style='height:12px;width:auto;fill:white;' viewBox='0 0 32 32'><path d='M20.8 18.1c0 2.7-2.2 4.8-4.8 4.8s-4.8-2.1-4.8-4.8c0-2.7 2.2-4.8 4.8-4.8 2.7.1 4.8 2.2 4.8 4.8zm11.2-7.4v14.9c0 2.3-1.9 4.3-4.3 4.3h-23.4c-2.4 0-4.3-1.9-4.3-4.3v-15c0-2.3 1.9-4.3 4.3-4.3h3.7l.8-2.3c.4-1.1 1.7-2 2.9-2h8.6c1.2 0 2.5.9 2.9 2l.8 2.4h3.7c2.4 0 4.3 1.9 4.3 4.3zm-8.6 7.5c0-4.1-3.3-7.5-7.5-7.5-4.1 0-7.5 3.4-7.5 7.5s3.3 7.5 7.5 7.5c4.2-.1 7.5-3.4 7.5-7.5z'></path></svg>" />
+					<img src="img/5.jpeg" data-src="img/5.jpeg" class="demo-gallery photo-list" data-caption="<svg xmlns='http://www.w3.org/2000/svg' style='height:12px;width:auto;fill:white;' viewBox='0 0 32 32'><path d='M20.8 18.1c0 2.7-2.2 4.8-4.8 4.8s-4.8-2.1-4.8-4.8c0-2.7 2.2-4.8 4.8-4.8 2.7.1 4.8 2.2 4.8 4.8zm11.2-7.4v14.9c0 2.3-1.9 4.3-4.3 4.3h-23.4c-2.4 0-4.3-1.9-4.3-4.3v-15c0-2.3 1.9-4.3 4.3-4.3h3.7l.8-2.3c.4-1.1 1.7-2 2.9-2h8.6c1.2 0 2.5.9 2.9 2l.8 2.4h3.7c2.4 0 4.3 1.9 4.3 4.3zm-8.6 7.5c0-4.1-3.3-7.5-7.5-7.5-4.1 0-7.5 3.4-7.5 7.5s3.3 7.5 7.5 7.5c4.2-.1 7.5-3.4 7.5-7.5z'></path></svg>" />
+					<img src="img/4.jpg" data-src="img/4.jpg" class="demo-gallery photo-list" data-caption="<svg xmlns='http://www.w3.org/2000/svg' style='height:12px;width:auto;fill:white;' viewBox='0 0 32 32'><path d='M20.8 18.1c0 2.7-2.2 4.8-4.8 4.8s-4.8-2.1-4.8-4.8c0-2.7 2.2-4.8 4.8-4.8 2.7.1 4.8 2.2 4.8 4.8zm11.2-7.4v14.9c0 2.3-1.9 4.3-4.3 4.3h-23.4c-2.4 0-4.3-1.9-4.3-4.3v-15c0-2.3 1.9-4.3 4.3-4.3h3.7l.8-2.3c.4-1.1 1.7-2 2.9-2h8.6c1.2 0 2.5.9 2.9 2l.8 2.4h3.7c2.4 0 4.3 1.9 4.3 4.3zm-8.6 7.5c0-4.1-3.3-7.5-7.5-7.5-4.1 0-7.5 3.4-7.5 7.5s3.3 7.5 7.5 7.5c4.2-.1 7.5-3.4 7.5-7.5z'></path></svg>" />
+					<img src="img/6.jpg" data-src="img/6.jpg" class="demo-gallery photo-list" data-caption="<svg xmlns='http://www.w3.org/2000/svg' style='height:12px;width:auto;fill:white;' viewBox='0 0 32 32'><path d='M20.8 18.1c0 2.7-2.2 4.8-4.8 4.8s-4.8-2.1-4.8-4.8c0-2.7 2.2-4.8 4.8-4.8 2.7.1 4.8 2.2 4.8 4.8zm11.2-7.4v14.9c0 2.3-1.9 4.3-4.3 4.3h-23.4c-2.4 0-4.3-1.9-4.3-4.3v-15c0-2.3 1.9-4.3 4.3-4.3h3.7l.8-2.3c.4-1.1 1.7-2 2.9-2h8.6c1.2 0 2.5.9 2.9 2l.8 2.4h3.7c2.4 0 4.3 1.9 4.3 4.3zm-8.6 7.5c0-4.1-3.3-7.5-7.5-7.5-4.1 0-7.5 3.4-7.5 7.5s3.3 7.5 7.5 7.5c4.2-.1 7.5-3.4 7.5-7.5z'></path></svg>" />
+				</div>
+				<!-- ACHIEVEMENT -->
+				<div id="achievement" style="display: none;">
+					content-ACHIEVEMENT
+				</div>
+
+				<!-- essay -->
+				<div id="essay" style="display: none;">
+					content-essay
+				</div>
+			</div>
+			<!-- body end -->
+
+			<!-- foot begin -->
+			<div>
+			</div>
+			<!-- foot end -->
+		</div>
+		<script>
+			$("#cl").click(function() {
+				//mizhu.toast("ok");
+			});
+			
+			$(".title-word").hover(function(){
+				$(this).shake(1, 5, 400);
+			});
+
+			$(".index").click(function() {
+				$("#index").show();
+				$("#information").hide();
+				$("#photo").hide();
+				$("#achievement").hide();
+				$("#essay").hide();
+			});
+
+			$(".information").click(function() {
+				$("#index").hide();
+				$("#information").show();
+				$("#photo").hide();
+				$("#achievement").hide();
+				$("#essay").hide();
+			});
+			$(".photo").click(function() {
+				$("#index").hide();
+				$("#information").hide();
+				$("#photo").show();
+				$("#achievement").hide();
+				$("#essay").hide();
+			});
+			$(".achievement").click(function() {
+				$("#index").hide();
+				$("#information").hide();
+				$("#photo").hide();
+				$("#achievement").show();
+				$("#essay").hide();
+			});
+			$(".essay").click(function() {
+				$("#index").hide();
+				$("#information").hide();
+				$("#photo").hide();
+				$("#achievement").hide();
+				$("#essay").show();
+			});
+		</script>
 	</body>
-	<script src="js/jquery-1.7.1.min.js"></script>
-	<script src="js/ui.js"></script>
-	<script type="text/javascript">
-		function _confirm1() {
-			mizhu.confirm('', '是否要取消关注？', function(flag) {
-				if(flag) {
-					mizhu.alert('', '取消成功');
-				}
-			});
-		}
-		function _confirm2() {
-			mizhu.confirm('温馨提醒', '是否要取消关注？', function(flag) {
-				if(flag) {
-					mizhu.alert('', '取消成功');
-				}
-			});
-		}
-	</script>
 
 </html>

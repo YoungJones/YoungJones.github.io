@@ -1,0 +1,41 @@
+body {
+	font: 13px/22px ‘Helvetica Neue’, Helvetica, Arial, Sans-serif;
+}
+
+.bg_img {
+	margin-left: 35%;
+	border: .1px solid lightgray;
+	opacity: .1;
+	position: absolute;
+	z-index: -9999;
+}
+
+#head {
+	width: 80%;
+	margin-left: 10%;
+}
+
+#head span {
+	display: inline-block;
+	height: 100px;
+	font-size: 32px;
+	margin-top: 5%;
+}
+
+.title-word {
+	color: teal;
+	word-spacing: 10px;
+}
+
+.title-word:hover {
+	color: coral;
+}
+
+.head-span {
+	text-align: center;
+}
+
+.head-span-p {
+	margin-top: 7px;
+	font-size: 18px;
+}
